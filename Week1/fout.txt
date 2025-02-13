@@ -1,0 +1,9 @@
+My name is Abdul Wahab.
+I am studying at Bahria University Islamabad.
+I am 18 years old.
+
+Sentence count = 3
+
+Word count = 7
+
+Character count = 22
