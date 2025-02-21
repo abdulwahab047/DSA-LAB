@@ -21,7 +21,7 @@ int main() {
 
 
 
-EXAMPLE 1.2
+//EXAMPLE 1.2
 
 #include<iostream>
 #include<iomanip>
@@ -66,7 +66,7 @@ int main() {
     return 0;
 }*/
 
-EX 1.1
+//EX 1.1
 
 /*#include<iostream>
 #include<iomanip>
@@ -117,7 +117,7 @@ int main() {
     return 0;
 }
 
-EXAMPLE 1.3
+//EXAMPLE 1.3
 
 #include<iostream>
 #include<iomanip>
@@ -139,7 +139,7 @@ int main() {
 }
 
 
-EXAMPLE 1.4
+//EXAMPLE 1.4
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -166,7 +166,7 @@ int main() {
     cout << endl;
     return 0;
 }
-EX 1.2
+//EX 1.2
 #include<iostream>
 #include<iomanip>
 using namespace std;
