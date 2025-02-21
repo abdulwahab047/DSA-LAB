@@ -1,67 +1,57 @@
-#pragma once
-#include<iostream>
-#include<stdlib.h>
-#include<string>
 #include"stack.h"
-using namespace std;
-Stack::Stack() {
-    top = -1;
+#include<stdlib.h>
+template <class ItemType>
+Stack<ItemType>::Stack() {
+	maxStack = 500;
+	top = -1;
+	items = new ItemType[500];
+}
+template<class Itemtype>
+Stack<Itemtype>::Stack(int max)
+{
+	maxStack = max;
+	top = -1;
+	items = new Itemtype[max];
 }
 
-Stack::~Stack() {
-
+template<class Itemtype>
+Stack<Itemtype>::~Stack()
+{
+	delete[] items;
 }
 
-bool Stack::isEmpty() const {
-    return (top == -1);
+template<class Itemtype>
+int Stack<Itemtype>::IsEmpty() const
+{
+	return (top == -1);
 }
 
-bool Stack::isFull() const {
-    return (top == MAX_ITEMS - 1);
+template<class Itemtype>
+int Stack<Itemtype>::IsFull() const
+{
+	return (top == maxStack - 1);
 }
 
-void Stack::push(char newitem) {
-    if (isFull()) {
-        cout << "Stack overflow" << endl;
-        exit(1);
-    }
-    top++;
-    items[top] = newitem;
+template<class Itemtype>
+void Stack<Itemtype>::Push(Itemtype newitem)
+{
+	if (IsFull())
+	{
+		cout << "Stack Overflow." << endl;
+		exit(1);
+	}
+	top++;
+	items[top] = newitem;
 }
-void Stack::pop(char& item) {
-    if (isEmpty()) {
-        cout << "Stack underflow" << endl;
-        exit(1);
-    }
-    item = items[top];
-    top--;
+template<class Itemtype>
+void Stack<Itemtype>::Pop(Itemtype& item)
+{
+	if (IsEmpty())
+	{
+		cout << "Stack Underflow." << endl;
+		exit(1);
+	}
+
+	item = items[top];
+	top--;
 }
-
-int Stack::peek() const {
-    if (isEmpty()) {
-        cout << "Stack is empty!" << endl;
-        exit(1);
-    }
-    return items[top];
-}
-void Stack::reverse(string input) {
-    char c;
-    string reversed = "";
-
-
-    for (char c : input) {
-        push(c);
-    }
-    while (!isEmpty())
-    {
-        pop(c);
-
-        reversed += c;
-
-    }
-    cout << reversed;
-}
-
-
-
-
